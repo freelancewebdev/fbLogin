@@ -56,7 +56,7 @@ $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 
 $modx->loadClass('transport.modPackageBuilder','',false, true);
 $builder = new modPackageBuilder($modx);
-$builder->createPackage($packagename,'1.0','rc3');
+$builder->createPackage($packagename,'1.0','rc4');
 $builder->registerNamespace($packagename,false,true,MODX_CORE_PATH.'components/'.$packagename.'/');
 
 /* load system settings */

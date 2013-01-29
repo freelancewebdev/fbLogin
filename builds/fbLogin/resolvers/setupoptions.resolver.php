@@ -35,7 +35,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             $setting->save();
 			$object->xpdo->log(xPDO::LOG_LEVEL_INFO,'['.$packagename.'] facebook_app_id setting was updated successfully.');
        	} else {
-            $setting = $object->xpdo->getObject('modSystemSetting');
+            $setting = $object->xpdo->newObject('modSystemSetting');
 			$setting->set('key','facebook_app_id');
 			$setting->set('name','facebook_app_id');	
             $setting->set('value',trim($options['appId']));
@@ -50,7 +50,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             $setting->save();
         	$object->xpdo->log(xPDO::LOG_LEVEL_INFO,'['.$packagename.'] facebook_app_secret setting was added successfully updated.');
         } else {
-        	$setting = $object->xpdo->getObject('modSystemSetting');	
+        	$setting = $object->xpdo->newObject('modSystemSetting');	
         	$setting->set('name','facebook_app_secret');
 			$setting->set('key', 'facebook_app_secret');
             $setting->set('value',trim($options['secret']));
